@@ -10,18 +10,18 @@ using System.Threading.Tasks;
 
 namespace Deneme.Controllers
 {
-    public class UrunlerController : Controller
+    public class UrunController : Controller
     {
         private readonly IService<Urun> _service;
         private readonly IMapper _mapper;
-        public UrunlerController(IService<Urun> service, IMapper mapper)
+        public UrunController(IService<Urun> service, IMapper mapper)
         {
             _service = service;
             _mapper = mapper;
         }
         public async Task<IActionResult> UrunlerListesi()
         {
-            var urunler = await _service.List();
+            var urunler = await _service.List() ;
             var urunlerDto = _mapper.Map<List<UrunDto>>(urunler);
           return View(urunlerDto);
         }

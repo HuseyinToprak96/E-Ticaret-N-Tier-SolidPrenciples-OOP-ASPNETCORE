@@ -12,15 +12,15 @@ namespace ServiceLayer.Services
 {
     public class UyeService : Service<Uye>, IUyeService
     {
-        private readonly IUyeRepository _repository;
+        private readonly IUyeRepository __repository;
         public UyeService(IUyeRepository repository,IUnitOfWork unitOfWork):base(repository,unitOfWork)
         {
-            _repository = repository;
+            __repository = repository;
         }
 
         public int UserLogin(LoginDto loginDto)
         {
-          return  _repository.UserLogin(loginDto);
+          return  __repository.UserLogin(loginDto);
         }
     }
 }

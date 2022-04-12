@@ -13,12 +13,12 @@ namespace DataLayer.Repository
 {
     public class UyeRepository : Repository<Uye>, IUyeRepository
     {
-        private readonly Context _context;
+        private readonly Context __context;
         private readonly DbSet<Uye> _dbSet;
 
         public UyeRepository(Context context):base(context)
         {
-            _context = context;
+            __context = context;
             _dbSet = context.Uyeler;
 
         }

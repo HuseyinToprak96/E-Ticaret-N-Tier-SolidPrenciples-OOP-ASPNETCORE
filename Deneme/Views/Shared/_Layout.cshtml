@@ -51,7 +51,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-6">@RenderBody()</div>
+        <div class="col-6" id="icerik">@RenderBody()</div>
         <div class="col">col</div>
     </div>
     sdasdasdas
@@ -70,6 +70,11 @@
    
 </body>
 </html>
+<style>
+    #icerik{
+        min-height:800px;
+    }
+</style>
 <script>
     function gosterAltKategori(id) {
         var altKategori = document.getElementById(id);

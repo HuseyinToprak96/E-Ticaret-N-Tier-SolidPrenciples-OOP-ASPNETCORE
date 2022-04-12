@@ -13,18 +13,17 @@ namespace ServiceLayer.Services
     public class KategoriService : Service<Kategori>, IKategoriService
     {
         private readonly IMapper _mapper;
-        private readonly IRepository<Kategori> _repository;
+        private readonly IRepository<Kategori> __repository;
         public KategoriService(IMapper mapper,IRepository<Kategori> repository,IUnitOfWork unitOfWork):base(repository,unitOfWork)
         {
             _mapper = mapper;
-            _repository = repository;
+            __repository = repository;
         }
 
         public async Task<KategoriAltKategoriUrunDto> KategoriyeGoreAltKategorilerveUrunler(int id)
         {
             var kategoriAltKategoriUrunDto = _mapper.Map<KategoriAltKategoriUrunDto>(await _repository.FindAsync(id));
             return kategoriAltKategoriUrunDto;
-
         }
     }
 }

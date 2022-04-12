@@ -21,16 +21,14 @@
         {
         <tr>
             <td>
-                <img src="@item.Resim" height="100" width="100"/>
+                <img src="@item.Resim" height="200" width="150"/>
             </td>
             <td>
                 @Html.ActionLink(item.UrunAdi, "Urun",new {id=item.UrunId})
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Fiyat)
+                @Html.DisplayFor(modelItem => item.Fiyat) TL
             </td>
-
-
         </tr>
         }
     </tbody>

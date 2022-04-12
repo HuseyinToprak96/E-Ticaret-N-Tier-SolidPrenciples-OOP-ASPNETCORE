@@ -10,6 +10,7 @@ namespace CoreLayer.Models
     {
         public int KategoriId { get; set; }
         public string KategoriAdi { get; set; }
+        public string Resim { get; set; }
         public List<AltKategori> AltKategoriler { get; set; }
     }
 }

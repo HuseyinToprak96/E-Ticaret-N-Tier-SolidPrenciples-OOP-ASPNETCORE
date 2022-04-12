@@ -9,7 +9,7 @@ namespace ServiceLayer.Services
 {
     public class Service<T> : IService<T> where T:class
     {
-        private readonly IRepository<T> _repository;
+        protected readonly IRepository<T> _repository;
         private readonly IUnitOfWork _unitOfWork;
 
         public Service(IRepository<T> repository, IUnitOfWork unitOfWork)

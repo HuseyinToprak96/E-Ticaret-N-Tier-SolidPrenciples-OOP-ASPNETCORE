@@ -11,7 +11,7 @@ namespace DataLayer.Repository
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        private readonly Context _context;
+        protected readonly Context _context;
         private readonly DbSet<T> _dbSet;
         public Repository(Context context)
         {
