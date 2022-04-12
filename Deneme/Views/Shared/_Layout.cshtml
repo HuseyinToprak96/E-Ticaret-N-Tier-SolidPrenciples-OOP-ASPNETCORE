@@ -1,0 +1,81 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Logo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Anasayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Hakkımızda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">İletişim</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Dropdown</a>
+                        <ul class="dropdown-menu" id="kategoriler">
+                            <li><a class="dropdown-item" href="#">Elektronik Eşyalar</a></li>
+                            <li><a class="dropdown-item" href="#">Beyaz Eşyalar</a></li>
+                            <li><a class="dropdown-item" href="#"></a>Yatak Odası Takımı</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="row">
+        <div class="col">
+            <h2>KATEGORİLER</h2>
+            <div style="width:100%;height:80px;" onclick="gosterAltKategori(1)">
+                <strong>Beyaz Eşyalar</strong>
+                <div class="altKategori" style="display:none" id="1">
+                    Bulaşık Makinası
+                </div>
+            </div>
+        </div>
+        <div class="col-6">@RenderBody()</div>
+        <div class="col">col</div>
+    </div>
+    sdasdasdas
+
+    <div class="row">
+        <div class="col">Lorem ipsum...</div>
+        <div class="col">col</div>
+        <div class="col">col</div>
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+   
+</body>
+</html>
+<script>
+    function gosterAltKategori(id) {
+        var altKategori = document.getElementById(id);
+        if (altKategori.style.display == "none")
+            altKategori.style.display = "block";
+        else
+            altKategori.style.display = "none";
+    }
+</script>

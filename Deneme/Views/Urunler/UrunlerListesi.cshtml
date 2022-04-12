@@ -1,0 +1,54 @@
+﻿@model IEnumerable<CoreLayer.Dtos.UrunDto>
+
+@{
+    ViewData["Title"] = "UrunlerListesi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+</script>
+<h1>UrunlerListesi</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<input type="text" class="form-control" placeholder="Aranan Ürünü Giriniz" id="aramaMotoru">
+<table class="table"
+       id="urunListesi">
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                <img src="@item.Resim" height="100" width="100"/>
+            </td>
+            <td>
+                @Html.ActionLink(item.UrunAdi, "Urun",new {id=item.UrunId})
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fiyat)
+            </td>
+
+
+        </tr>
+        }
+    </tbody>
+</table>
+
+<style>
+
+</style>
+
+
+
+<script>
+    $(document).ready(function () {
+        $("#aramaMotoru").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#urunListesi tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
